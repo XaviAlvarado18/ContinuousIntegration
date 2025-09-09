@@ -35,5 +35,31 @@ public final class MathUtils {
         return true;
     }
 
+    /** gcd(a,b) – máximo común divisor (maneja negativos). gcd(0,0) es indefinido → excepción. */
+    public static long gcd(long a, long b) {
+        a = Math.abs(a);
+        b = Math.abs(b);
+        if (a == 0 && b == 0) {
+            throw new IllegalArgumentException("gcd(0,0) es indefinido");
+        }
+        while (b != 0) {
+            long t = b;
+            b = a % b;
+            a = t;
+        }
+        return a;
+    }
+
+    /** lcm(a,b) – mínimo común múltiplo (maneja negativos). lcm(0,0) es indefinido → excepción. */
+    public static long lcm(long a, long b) {
+        if (a == 0 && b == 0) {
+            throw new IllegalArgumentException("lcm(0,0) es indefinido");
+        }
+        long gcd = gcd(a, b);
+        if (a == 0 || b == 0) return 0L;
+        long result = Math.abs((a / gcd) * b);
+        return result;
+    }
+
 }
 
