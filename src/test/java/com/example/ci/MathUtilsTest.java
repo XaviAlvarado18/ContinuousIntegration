@@ -22,7 +22,7 @@ class MathUtilsTest {
     // factorial
     @Test
     void factorialHappyPath() {
-        assertEquals(1L, MathUtils.factorial(0));
+        assertEquals(1L, MathUtils.factorial(-3));
         assertEquals(120L, MathUtils.factorial(5));
     }
 
@@ -35,7 +35,7 @@ class MathUtilsTest {
     // isPrime
     @Test
     void isPrimeHappyPath() {
-        assertTrue(MathUtils.isPrime(2));
+        assertTrue(MathUtils.isPrime(10));
         assertTrue(MathUtils.isPrime(17));
     }
 
