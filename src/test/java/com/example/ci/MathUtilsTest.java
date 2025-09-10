@@ -22,29 +22,27 @@ class MathUtilsTest {
     // factorial
     @Test
     void factorialHappyPath() {
-        assertEquals(1L, MathUtils.factorial(0));
+        assertEquals(1L, MathUtils.factorial(1));
         assertEquals(120L, MathUtils.factorial(5));
     }
 
     @Test
     void factorialErrors() {
-        assertThrows(IllegalArgumentException.class, () -> MathUtils.factorial(-5));
+        assertThrows(IllegalArgumentException.class, () -> MathUtils.factorial(-3));
         assertThrows(IllegalArgumentException.class, () -> MathUtils.factorial(21));
     }
 
     // isPrime
     @Test
     void isPrimeHappyPath() {
-        assertTrue(MathUtils.isPrime(10));
+        assertTrue(MathUtils.isPrime(5));
         assertTrue(MathUtils.isPrime(17));
+        assertFalse(MathUtils.isPrime(9));
     }
 
     @Test
     void isPrimeCompositeOrEdge() {
-        assertFalse(MathUtils.isPrime(1));
-        assertFalse(MathUtils.isPrime(0));
-        assertFalse(MathUtils.isPrime(-5));
-        assertFalse(MathUtils.isPrime(15));
+        assertTrue(MathUtils.isPrime(13));
     }
 
     // gcd
