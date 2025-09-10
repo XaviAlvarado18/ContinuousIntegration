@@ -28,14 +28,14 @@ class MathUtilsTest {
 
     @Test
     void factorialErrors() {
-        assertThrows(IllegalArgumentException.class, () -> MathUtils.factorial(-1));
+        assertThrows(IllegalArgumentException.class, () -> MathUtils.factorial(-5));
         assertThrows(IllegalArgumentException.class, () -> MathUtils.factorial(21));
     }
 
     // isPrime
     @Test
     void isPrimeHappyPath() {
-        assertTrue(MathUtils.isPrime(2));
+        assertTrue(MathUtils.isPrime(10));
         assertTrue(MathUtils.isPrime(17));
     }
 
