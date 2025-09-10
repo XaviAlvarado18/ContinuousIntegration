@@ -2,10 +2,11 @@ name: Java CI
 
 on:
   pull_request:
-    branches: [ dev,main ]
+    branches: [ dev, main ]   # se ejecuta en PR hacia dev y main
 
 jobs:
-  build:
+  tests:   # id interno del job
+    name: Run Unit Tests   # este es el nombre visible en GitHub
     runs-on: ubuntu-latest
 
     steps:
