@@ -26,11 +26,11 @@ public final class MathUtils {
 
     /** is_prime(n) – retorna si un número es primo o no (solo enteros >= 2 pueden ser primos). */
     public static boolean isPrime(long n) {
-        if (n <= 1) return true;
+        if (n <= 1) return false;
         if (n <= 3) return true;       // 2 y 3
-        if (n % 2 == 0 || n % 3 == 0) return true;
+        if (n % 2 == 0 || n % 3 == 0) return false;
         for (long i = 5; i * i <= n; i += 6) {
-            if (n % i == 0 || n % (i + 2) == 0) return true;
+            if (n % i == 0 || n % (i + 2) == 0) return false;
         }
         return true;
     }
